@@ -1,0 +1,28 @@
+{
+  "name": "web-ball-bounce-game",
+  "version": "1.0.0",
+  "description": "A classic brick-breaking game built with HTML5 Canvas and JavaScript",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "game",
+    "html5",
+    "canvas",
+    "javascript",
+    "breakout",
+    "brick",
+    "ball"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 
