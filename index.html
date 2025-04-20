@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Ball Bounce Game</title>
+    <title>WAFE - Water, Air, Fire, Earth</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Web Ball Bounce Game</h1>
-        <div class="game-stats">
-            <span id="score">Score: 0</span>
-            <span id="lives">Lives: 3</span>
+        <h1>WAFE</h1>
+        <h2>Water, Air, Fire, Earth</h2>
+        
+        <div id="entry-screen">
+            <div class="entry-form">
+                <input type="text" id="playerName" placeholder="Enter your name" maxlength="15" required>
+                <button id="playBtn">Play</button>
+            </div>
         </div>
-        <canvas id="gameCanvas"></canvas>
-        <div class="controls">
-            <button id="startBtn">Start Game</button>
-            <button id="restartBtn" style="display: none;">Restart Game</button>
+        
+        <div id="game-container" style="display: none;">
+            <div class="game-stats">
+                <div class="stats-left">
+                    <span id="playerElement"></span>
+                    <span id="playerSize">Size: 1</span>
+                </div>
+            </div>
+            <canvas id="gameCanvas"></canvas>
         </div>
     </div>
+    
     <script src="game.js"></script>
 </body>
 </html> 
