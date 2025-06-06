@@ -1,24 +1,19 @@
-version: 2
-updates:
-  - package-ecosystem: "npm"
-    directory: "/" # Assuming your package.json is in the root. Adjust if it's in a subdirectory e.g., "/frontend".
-    schedule:
-      interval: "daily"
-      time: "10:45" # Example: Set this to a time slightly in the future from when you commit this change.
-      timezone: "Europe/Berlin"
-    open-pull-requests-limit: 5
-    allow:
-      - dependency-name: "react-hook-form"
-        # This will create PRs for minor (e.g., 7.0.0 -> 7.1.0) and patch (e.g., 7.0.0 -> 7.0.1) updates.
-        update-types: ["version-update:semver-minor", "version-update:semver-patch"]
-    ignore:
-      - dependency-name: "react-hook-form"
-        # This will ignore major version updates (e.g., 7.x.x -> 8.0.0).
-        update-types: ["version-update:semver-major"]
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-    reviewers:
-      - "brightlocal/frontend-team" # Ensure this team exists and has access
-    assignees:
-      - "brightlocal/frontend-team" # Ensure this team exists and has access
+name: Dependabot-Slack
+on:
+  pull_request:
+    branches:
+      - 'dependabot/**'
+
+jobs:
+  dependabot_slack:
+    runs-on: ubuntu-20.04
+    name: Sends a message to Slack when a push, a pull request or an issue is made
+    steps:
+      - name: Send message to Slack API
+        uses: archive/github-actions-slack@v2.0.0
+        id: notify
+        with:
+          # This is where the secret is referenced
+          slack-bot-user-oauth-access-token: ${{ secrets.DEPENDABOT_SLACK_SECRET }}
+          slack-channel: "#all-wase" # Replace with your actual Slack channel name (e.g., #dev-alerts)
+          slack-text: New Dependabot PR ${{ github.event.pull_request.html_url }}
