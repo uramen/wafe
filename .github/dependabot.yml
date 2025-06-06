@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/" # Assuming your package.json is in the root. Adjust if it's in a subdirectory e.g., "/frontend".
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00" # Specify timezone if needed, e.g., "09:00 UTC" or "09:00 Europe/Berlin"
+    open-pull-requests-limit: 5
+    allow:
+      - dependency-name: "react-hook-form"
+        # This will create PRs for minor (e.g., 7.0.0 -> 7.1.0) and patch (e.g., 7.0.0 -> 7.0.1) updates.
+        update-types: ["version-update:semver-minor", "version-update:semver-patch"]
+    ignore:
+      - dependency-name: "react-hook-form"
+        # This will ignore major version updates (e.g., 7.x.x -> 8.0.0).
+        update-types: ["version-update:semver-major"]
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    reviewers:
+      - "brightlocal/frontend-team" # Ensure this team exists and has access
+    assignees:
+      - "brightlocal/frontend-team" # Ensure this team exists and has access
