@@ -34,7 +34,7 @@
     "dataclass": "^1.0.4",
     "debounce": "^1.0.0",
     "deepmerge": "^2.1.1",
-    "dompurify": "^2.2.7",
+    "dompurify": "^3.2.4",
     "dromo-uploader-react": "^2.0.10",
     "file-saver": "^1.3.3",
     "flatpickr": "1.8.6",
