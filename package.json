@@ -90,7 +90,7 @@
     "stimulus": "^1.1.0",
     "storybook": "^8.1.8",
     "systemjs": "6.8.3",
-    "tinymce": "^4.9.11",
+    "tinymce": "^7.2.0",
     "uuid": "^9.0.0",
     "whatwg-fetch": "0.10.1",
     "zod": "^3.21.4"
