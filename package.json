@@ -88,7 +88,7 @@
     "single-spa-react": "^5.0.1",
     "smooth-scroll": "^12.1.5",
     "stimulus": "^1.1.0",
-    "storybook": "^8.1.8",
+    "storybook": "^8.6.15",
     "systemjs": "6.8.3",
     "tinymce": "^4.9.11",
     "uuid": "^9.0.0",
